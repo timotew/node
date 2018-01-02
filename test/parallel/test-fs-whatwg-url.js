@@ -79,7 +79,7 @@ if (common.isWindows) {
     fs.readFile(new URL(`file:///c:/tmp/${i}/`), common.expectsError({
       code: 'ERR_INVALID_FILE_URL_PATH',
       type: TypeError,
-      message: 'File URL path can not end with / characters'
+      message: 'File URL path must not end with / character'
     }));
   });
 }
