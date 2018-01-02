@@ -203,7 +203,7 @@ fs.readFileSync(new URL('file:///notdriveletter/p/a/t/h/file'));
 fs.readFileSync(new URL('file:///c/p/a/t/h/file'));
 // TypeError [ERR_INVALID_FILE_URL_PATH]: File URL path must be absolute
 
-// - WHATWG file URLs must not end with forward slash `/`
+// WHATWG file URLs must not end with forward slash `/`
 fs.readFileSync(new URL('file:///c/p/a/t/h/file/'));
 // TypeError [ERR_INVALID_FILE_URL_PATH]: Illegal operation on a directory
 ```
