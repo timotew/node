@@ -73,11 +73,9 @@ if (common.isWindows) {
   }));
 }
 
-//path ending with forward slash are not permitted on windows
-if (common.isWindows) {
-  fs.readFile(new URL('file:///c:/tmp/test/'), common.expectsError({
-    code: 'ERR_INVALID_FILE_URL_PATH',
-    type: TypeError,
-    message: 'File URL path must not end with / character'
-  }));
-}
+// path ending with forward slash are not permitted
+fs.readFile(new URL('file:///c:/tmp/test/'), common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path must not end with / character'
+}));
