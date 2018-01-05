@@ -77,5 +77,11 @@ if (common.isWindows) {
 fs.readFile(new URL('file:///c:/tmp/test/'), common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path must not end with / character'
+  message: 'File URL path illegal operation on a directory'
+}));
+
+fs.readFile(new URL('file:///tmp/test/'), common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
 }));
