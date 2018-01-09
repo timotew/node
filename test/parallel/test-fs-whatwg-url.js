@@ -85,3 +85,195 @@ fs.readFile(new URL('file:///tmp/test/'), common.expectsError({
   type: Error,
   message: 'File URL path illegal operation on a directory'
 }));
+
+common.expectsError(
+  () => {
+    fs.readFileSync(new URL('file:///c:/tmp/test/'));
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.readFileSync(new URL('file:///tmp/test/'));
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+//fs.open
+fs.open(new URL('file:///c:/tmp/test/'), common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+fs.open(new URL('file:///tmp/test/'), common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+common.expectsError(
+  () => {
+    fs.openSync(new URL('file:///c:/tmp/test/'));
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.openSync(new URL('file:///tmp/test/'));
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+
+//append file
+fs.appendFile(new URL('file:///c:/tmp/test/'), 'test data', common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+fs.appendFile(new URL('file:///tmp/test/'), 'test data', common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+common.expectsError(
+  () => {
+    fs.appendFileSync(new URL('file:///c:/tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.appendFileSync(new URL('file:///tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+//creatReadStream
+common.expectsError(
+  () => {
+    fs.createReadStream(new URL('file:///c:/tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.createReadStream(new URL('file:///tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+//createWriteStream
+common.expectsError(
+  () => {
+    fs.createWriteStream(new URL('file:///c:/tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.createWriteStream(new URL('file:///tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+//truncate
+fs.truncate(new URL('file:///c:/tmp/test/'), 4, common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+fs.truncate(new URL('file:///tmp/test/'), 4, common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+common.expectsError(
+  () => {
+    fs.truncateSync(new URL('file:///c:/tmp/test/'), 4);
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.truncateSync(new URL('file:///tmp/test/'), 4);
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+//writeFile
+fs.writeFile(new URL('file:///c:/tmp/test/'), 'test data', common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+fs.writeFile(new URL('file:///tmp/test/'), 'test data', common.expectsError({
+  code: 'ERR_INVALID_FILE_URL_PATH',
+  type: Error,
+  message: 'File URL path illegal operation on a directory'
+}));
+
+common.expectsError(
+  () => {
+    fs.writeFileSync(new URL('file:///c:/tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
+
+common.expectsError(
+  () => {
+    fs.writeFileSync(new URL('file:///tmp/test/'), 'test data');
+  },
+  {
+    code: 'ERR_INVALID_FILE_URL_PATH',
+    type: Error,
+    message: 'File URL path illegal operation on a directory'
+  });
