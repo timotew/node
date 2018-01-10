@@ -186,23 +186,6 @@ common.expectsError(
     message: 'File URL path illegal operation on a directory'
   });
 
-// fs.access
-fs.access(urlWithSlash, common.expectsError({
-  code: 'ERR_INVALID_FILE_URL_PATH',
-  type: Error,
-  message: 'File URL path illegal operation on a directory'
-}));
-
-common.expectsError(
-  () => {
-    fs.accessSync(urlWithSlash);
-  },
-  {
-    code: 'ERR_INVALID_FILE_URL_PATH',
-    type: Error,
-    message: 'File URL path illegal operation on a directory'
-  });
-
 // fs.copyFile
 fs.copyFile(urlWithSlash, urlWithoutSlash, common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
@@ -229,59 +212,6 @@ common.expectsError(
 common.expectsError(
   () => {
     fs.copyFileSync(urlWithoutSlash, urlWithSlash);
-  },
-  {
-    code: 'ERR_INVALID_FILE_URL_PATH',
-    type: Error,
-    message: 'File URL path illegal operation on a directory'
-  });
-// fs.stat
-fs.stat(urlWithSlash, common.expectsError({
-  code: 'ERR_INVALID_FILE_URL_PATH',
-  type: Error,
-  message: 'File URL path illegal operation on a directory'
-}));
-
-common.expectsError(
-  () => {
-    fs.statSync(urlWithSlash);
-  },
-  {
-    code: 'ERR_INVALID_FILE_URL_PATH',
-    type: Error,
-    message: 'File URL path illegal operation on a directory'
-  });
-// fs.unlink
-fs.unlink(urlWithSlash, common.expectsError({
-  code: 'ERR_INVALID_FILE_URL_PATH',
-  type: Error,
-  message: 'File URL path illegal operation on a directory'
-}));
-
-common.expectsError(
-  () => {
-    fs.unlinkSync(urlWithSlash);
-  },
-  {
-    code: 'ERR_INVALID_FILE_URL_PATH',
-    type: Error,
-    message: 'File URL path illegal operation on a directory'
-  });
-
-// fs.watchFile
-common.expectsError(
-  () => {
-    fs.watchFile(urlWithSlash);
-  },
-  {
-    code: 'ERR_INVALID_FILE_URL_PATH',
-    type: Error,
-    message: 'File URL path illegal operation on a directory'
-  });
-
-common.expectsError(
-  () => {
-    fs.unwatchFile(urlWithSlash);
   },
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
