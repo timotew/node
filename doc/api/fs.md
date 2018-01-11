@@ -225,6 +225,10 @@ fs.readFileSync(new URL('file://hostname/p/a/t/h/file'));
 // - WHATWG file URLs convert to absolute path
 // file:///tmp/hello => /tmp/hello
 fs.readFileSync(new URL('file:///tmp/hello'));
+
+// WHATWG file URLs must not end with forward slash `/`
+fs.readFileSync(new URL('file:///c/p/a/t/h/file/'));
+// Error [ERR_INVALID_FILE_URL_PATH]: File URL path cannot be a directory
 ```
 
 A `file:` URL having encoded slash characters will result in a throw on all

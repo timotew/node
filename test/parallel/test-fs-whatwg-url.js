@@ -83,7 +83,7 @@ const urlWithoutSlash = common.isWindows ?
 fs.readFile(urlWithSlash, common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 common.expectsError(
@@ -93,14 +93,14 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.open
 fs.open(urlWithSlash, common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 common.expectsError(
@@ -110,14 +110,14 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.appendFile
 fs.appendFile(urlWithSlash, 'test data', common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 common.expectsError(
@@ -127,7 +127,7 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.creatReadStream
@@ -138,7 +138,7 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.createWriteStream
@@ -149,14 +149,14 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.truncate
 fs.truncate(urlWithSlash, 4, common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 common.expectsError(
@@ -166,14 +166,14 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.writeFile
 fs.writeFile(urlWithSlash, 'test data', common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 common.expectsError(
@@ -183,20 +183,20 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 // fs.copyFile
 fs.copyFile(urlWithSlash, urlWithoutSlash, common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 fs.copyFile(urlWithoutSlash, urlWithSlash, common.expectsError({
   code: 'ERR_INVALID_FILE_URL_PATH',
   type: Error,
-  message: 'File URL path illegal operation on a directory'
+  message: 'File URL path cannot be a directory'
 }));
 
 common.expectsError(
@@ -206,7 +206,7 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
 
 common.expectsError(
@@ -216,5 +216,5 @@ common.expectsError(
   {
     code: 'ERR_INVALID_FILE_URL_PATH',
     type: Error,
-    message: 'File URL path illegal operation on a directory'
+    message: 'File URL path cannot be a directory'
   });
