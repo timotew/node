@@ -205,7 +205,7 @@ fs.readFileSync(new URL('file:///c/p/a/t/h/file'));
 
 // WHATWG file URLs must not end with forward slash `/`
 fs.readFileSync(new URL('file:///c/p/a/t/h/file/'));
-// TypeError [ERR_INVALID_FILE_URL_PATH]: Illegal operation on a directory
+// TypeError [ERR_INVALID_FILE_URL_PATH]: File URL path cannot be a directory
 ```
 
 *Note*: `file:` URLs with drive letters must use `:` as a separator just after
@@ -227,7 +227,7 @@ fs.readFileSync(new URL('file://hostname/p/a/t/h/file'));
 fs.readFileSync(new URL('file:///tmp/hello'));
 
 // WHATWG file URLs must not end with forward slash `/`
-fs.readFileSync(new URL('file:///c/p/a/t/h/file/'));
+fs.readFileSync(new URL('file:///tmp/hello/'));
 // Error [ERR_INVALID_FILE_URL_PATH]: File URL path cannot be a directory
 ```
 
